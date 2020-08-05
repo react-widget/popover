@@ -1,57 +1,3 @@
-# popover
-
-Popover组件
-
-## 安装
-
-`npm install --save react-widget-popover`
-
-
-## 使用
-
-[![Edit react-widget-popover](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-widget-popover-zkc6w?fontsize=14&hidenavigation=1&theme=dark)
-
-```js
-import React from "react";
-import Popover from "react-widget-popover";
-import "react-widget-popover/style";
-import "./styles.css";
-
-export default function App() {
-  return (
-    <div
-      className="App"
-      style={{
-        padding: 100
-      }}
-    >
-      <Popover
-        title="Title"
-        content="Content"
-      >
-        <button>点击试试</button>
-      </Popover>
-    </div>
-  );
-}
-
-```
-
-### Interfaces
-
-```ts
-export interface PopoverProps extends TooltipProps {
-    /** popover 标题 */
-    title?: React.ReactNode | (() => React.ReactNode);
-    /** popover 内容 */
-    content?: React.ReactNode | (() => React.ReactNode);
-}
-```
-
-
-### 基础样式
-
-```css
 .rw-popover-root {
     position: absolute;
     left: 0;
@@ -218,5 +164,3 @@ export interface PopoverProps extends TooltipProps {
         opacity: 0;
     }
 }
-
-```
