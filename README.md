@@ -48,6 +48,18 @@ export interface PopoverProps extends TooltipProps {
 }
 ```
 
+### defaultProps 
+
+```
+{
+	prefixCls: "rw-popover",
+	placement: "top",
+	trigger: "click",
+	arrowSize: 7,
+	offset: 2,
+}
+```
+
 
 ### 基础样式
 
@@ -84,23 +96,32 @@ export interface PopoverProps extends TooltipProps {
     text-align: left;
     background-color: #FFF;
     border-radius: 2px;
-    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, .12), 0 6px 16px 0 rgba(0, 0, 0, .08), 0 9px 28px 8px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
     box-sizing: border-box;
 }
 
 .rw-popover-arrow {
     position: absolute;
-    width: 0;
-    height: 0;
+    box-sizing: border-box;
+    border-width: 7px;
+    border-style: solid;
+    border-color: transparent;
+    z-index: 1;
+}
+
+
+.rw-popover-arrow:after {
+    position: absolute;
+    display: block;
+    content: "";
+    box-sizing: border-box;
     border-color: transparent;
     border-style: solid;
-    z-index: 1;
-    box-sizing: border-box;
+    border-width: 7px;
 }
 
 .rw-popover-title {
     min-width: 177px;
-    min-height: 32px;
     margin: 0;
     padding: 5px 16px 4px;
     color: rgba(0, 0, 0, .85);
@@ -115,42 +136,90 @@ export interface PopoverProps extends TooltipProps {
     box-sizing: border-box;
 }
 
+/*=========================*/
+
+/* top */
 .rw-popover-placement-top>.rw-popover-arrow,
 .rw-popover-placement-top-left>.rw-popover-arrow,
 .rw-popover-placement-top-right>.rw-popover-arrow {
-    bottom: -5px;
-    border-width: 5px 5px 0;
-    border-top-color: #FFF;
-    box-shadow: 3px 3px 7px rgba(0, 0, 0, .07);
+    bottom: -7px;
+    width: 14px;
+    height: 7px;
+    border-bottom-width: 0;
+    border-top-color: hsla(0, 0%, 85%, .5);
 }
 
+.rw-popover-placement-top>.rw-popover-arrow:after,
+.rw-popover-placement-top-left>.rw-popover-arrow:after,
+.rw-popover-placement-top-right>.rw-popover-arrow:after {
+    border-bottom-width: 0;
+    border-top-color: #FFF;
+    left: -7px;
+    top: -8px;
+}
+
+
+/* bottom */
 .rw-popover-placement-bottom>.rw-popover-arrow,
 .rw-popover-placement-bottom-left>.rw-popover-arrow,
 .rw-popover-placement-bottom-right>.rw-popover-arrow {
-    top: -5px;
-    border-width: 0 5px 5px;
-    border-bottom-color: #FFF;
-    box-shadow: -2px -2px 5px rgba(0, 0, 0, .06);
+    top: -7px;
+    width: 14px;
+    height: 7px;
+    border-top-width: 0;
+    border-bottom-color: hsla(0, 0%, 85%, .5);
 }
 
+.rw-popover-placement-bottom>.rw-popover-arrow:after,
+.rw-popover-placement-bottom-left>.rw-popover-arrow:after,
+.rw-popover-placement-bottom-right>.rw-popover-arrow:after {
+    border-top-width: 0;
+    border-bottom-color: #FFF;
+    left: -7px;
+    top: 1px;
+}
+
+/* left */
 .rw-popover-placement-left>.rw-popover-arrow,
 .rw-popover-placement-left-top>.rw-popover-arrow,
 .rw-popover-placement-left-bottom>.rw-popover-arrow {
-    right: -5px;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #FFF;
-    box-shadow: 3px -3px 7px rgba(0, 0, 0, .07);
+    right: -7px;
+    width: 7px;
+    height: 14px;
+    border-right-width: 0;
+    border-left-color: hsla(0, 0%, 85%, .5);
 }
 
+.rw-popover-placement-left>.rw-popover-arrow:after,
+.rw-popover-placement-left-top>.rw-popover-arrow:after,
+.rw-popover-placement-left-bottom>.rw-popover-arrow:after {
+    border-right-width: 0;
+    border-left-color: #FFF;
+    left: -8px;
+    top: -7px;
+}
+
+/* right */
 .rw-popover-placement-right>.rw-popover-arrow,
 .rw-popover-placement-right-top>.rw-popover-arrow,
 .rw-popover-placement-right-bottom>.rw-popover-arrow {
-    left: -5px;
-    border-width: 5px 5px 5px 0;
-    border-right-color: #FFF;
-    box-shadow: -3px 3px 7px rgba(0, 0, 0, .07);
+    left: -7px;
+    width: 7px;
+    height: 14px;
+    border-left-width: 0;
+    border-right-color: hsla(0, 0%, 85%, .5);
 }
 
+.rw-popover-placement-right>.rw-popover-arrow:after,
+.rw-popover-placement-right-top>.rw-popover-arrow:after,
+.rw-popover-placement-right-bottom>.rw-popover-arrow:after {
+    border-left-width: 0;
+    border-right-color: #FFF;
+    left: 1px;
+    top: -7px;
+}
+
+/*=========================*/
 .rw-popover-placement-top-left>.rw-popover-arrow,
 .rw-popover-placement-bottom-left>.rw-popover-arrow {
     left: 16px;
@@ -182,6 +251,8 @@ export interface PopoverProps extends TooltipProps {
 .rw-popover-placement-right-bottom>.rw-popover-arrow {
     bottom: 8px;
 }
+
+/*=========================*/
 
 .rw-popover-animated {
     animation-duration: 0.2s;
@@ -218,5 +289,4 @@ export interface PopoverProps extends TooltipProps {
         opacity: 0;
     }
 }
-
 ```

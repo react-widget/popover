@@ -1,17 +1,6 @@
 import React, { Component } from "react";
 import Popover from "../../src";
 
-const animateClassNames = {
-	appear: "animated",
-	appearActive: "fadeBottomIn",
-	enter: "animated",
-	enterActive: "fadeBottomIn",
-	enterDone: "",
-	exit: "animated",
-	exitActive: "fadeBottomOut",
-	exitDone: "",
-};
-
 function PopoverButton({ text, ...props }) {
 	return (
 		<Popover title="Title" content="...Content..." {...props}>
@@ -30,24 +19,24 @@ export default class DEMO extends Component {
 	render() {
 		return (
 			<div>
-				<PopoverButton placement="bottomLeft" />
+				<PopoverButton placement="bottomLeft" className="test-pop" />
 				<PopoverButton placement="bottom" />
 				<PopoverButton placement="bottomRight" />
-				<hr />
+				<p />
 				<PopoverButton placement="topLeft" />
 				<PopoverButton placement="top" />
 				<PopoverButton placement="topRight" />
-				<hr />
+				<p />
 				<PopoverButton placement="leftTop" />
-				<br />
+				<p />
 				<PopoverButton placement="left" />
-				<br />
+				<p />
 				<PopoverButton placement="leftBottom" />
-				<hr />
+				<p />
 				<PopoverButton placement="rightTop" />
-				<br />
+				<p />
 				<PopoverButton placement="right" defaultVisible />
-				<br />
+				<p />
 				<PopoverButton placement="rightBottom" />
 			</div>
 		);

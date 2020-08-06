@@ -16,6 +16,8 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 		prefixCls: "rw-popover",
 		placement: "top",
 		trigger: "click",
+		arrowSize: 7,
+		offset: 2,
 		role: "popover",
 	};
 
