@@ -1,6 +1,6 @@
 {
 	"name": "react-widget-popover",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "react-widget-popover",
 	"main": "cjs/index.js",
 	"module": "esm/index.js",
