@@ -1,6 +1,6 @@
 {
 	"name": "react-widget-popover",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "react-widget-popover",
 	"main": "cjs/index.js",
 	"module": "esm/index.js",
@@ -39,7 +39,7 @@
 	"dependencies": {
 		"@babel/runtime": "^7.9.2",
 		"classnames": "^2.2.6",
-		"react-widget-tooltip": "^1.0.2"
+		"react-widget-tooltip": "^1.0.3"
 	},
 	"author": "nobo.zhou@foxmail.com",
 	"license": "MIT",
