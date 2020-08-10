@@ -17,8 +17,9 @@ export class Popover extends React.Component<PopoverProps, PopoverState> {
 		placement: "top",
 		trigger: "click",
 		arrowSize: 7,
-		offset: 2,
+		offset: 0,
 		role: "popover",
+		delay: 0,
 	};
 
 	isEmptyTitle(title: React.ReactNode) {
